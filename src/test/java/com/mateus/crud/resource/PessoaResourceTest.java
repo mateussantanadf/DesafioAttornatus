@@ -1,7 +1,5 @@
-package com.mateus.crud;
+package com.mateus.crud.resource;
 
-import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
-import static io.restassured.module.mockmvc.RestAssuredMockMvc.standaloneSetup;
 import static org.mockito.Mockito.when;
 
 import java.text.ParseException;
@@ -24,12 +22,10 @@ import com.mateus.crud.services.PessoaService;
 
 import io.restassured.http.ContentType;
 
-@WebMvcTest
-class CrudAttornatusApplicationTests {
+import static io.restassured.module.mockmvc.RestAssuredMockMvc.*;
 
-	@Test
-	void contextLoads() {
-	}
+@WebMvcTest
+public class PessoaResourceTest {
 
 	@Autowired
 	private PessoaResource pessoaResource;
@@ -71,5 +67,4 @@ class CrudAttornatusApplicationTests {
 		.then()
 			.statusCode(HttpStatus.OK.value());
 	}
-
 }
